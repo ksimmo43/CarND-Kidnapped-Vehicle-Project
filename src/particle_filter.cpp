@@ -20,7 +20,7 @@
 using namespace std;
 
 void ParticleFilter::init(double x, double y, double theta, double std[]) {
-	num_particles = 100;
+	num_particles = 111;
 
 	default_random_engine gen;
 	normal_distribution<double> x_init_dist(x, std[0]);
@@ -135,8 +135,8 @@ void ParticleFilter::dataAssociation(std::vector<LandmarkObs> predicted, std::ve
 }
 
 double ParticleFilter::gaussianProb(double ox, double oy, double px, double py,
-// Calculate Gaussian Probability of an observation given a known landmark
 	double std_x, double std_y) {
+	// Calculate Gaussian Probability of an observation given a known landmark
 	double dx = ox - px;
 	double dy = oy - py;
 	double var_x = std_x * std_x;
